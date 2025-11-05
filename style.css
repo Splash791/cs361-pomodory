@@ -1,0 +1,321 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3daba; 
+    color: #333;
+}
+
+#app-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    min-height: 700px; 
+}
+
+.screen-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+    text-align: center;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.shortcut-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.shortcut-btn {
+    background-color: #fddec7; 
+    color: #e5811e; 
+    border: 1px solid #ff8800;
+    padding: 20px 10px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shortcut-btn .icon {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.shortcut-btn:hover {
+    background-color: #f9cc8e;
+    transform: translateY(-2px);
+}
+
+/* Timer Screen */
+.timer-box {
+    background-color: #c4c4c4; 
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px auto;
+    transition: background-color 0.5s ease; 
+}
+
+#timer-display {
+    font-size: 5em;
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 120px; 
+}
+
+.primary-btn {
+    background-color: #2ea307; 
+    color: white;
+}
+.primary-btn:hover {
+    background-color: #3fd200;
+}
+.secondary-btn {
+    background-color: #c00000;
+    color: #ffffff;
+}
+.secondary-btn:hover {
+    background-color: #e00303;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #ff8800;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.small-btn {
+    margin-top: 20px;
+    padding: 8px 20px;
+    font-size: 0.9em;
+    min-width: unset;
+    background-color: #f0f0f0; 
+    color: #555;
+    border: 1px solid #ddd;
+}
+.small-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.recent-history, .history-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+#history-list li, #full-history-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.placeholder {
+    color: #999;
+    font-style: italic;
+    justify-content: center !important;
+}
+
+.service-item, .account-info {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.logout-btn {
+    margin-left: 10px;
+    background-color: #f44336; 
+    color: white;
+}
+
+/*  FAQ & Form Styling  */
+.faq-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+.faq-item h4 {
+    color: #ff8800; 
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+#feedback-form {
+    text-align: left;
+    margin-top: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.form-group input[type="text"], 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+#feedback-message {
+    color: #4CAF50 !important; 
+    font-weight: 600;
+}
+
+/*  DARK MODE STYLES  */
+.dark-mode {
+    background-color: #1a1a1a !important; 
+    color: #f0f0f0 !important; 
+}
+
+/* .dark-mode #app-container {
+    /* Maintain relative positioning */
+/*} */
+
+
+.dark-mode .screen-container {
+    background-color: #2c2c2c; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+}
+
+.dark-mode .timer-box {
+}
+
+.dark-mode .shortcut-btn {
+    background-color: #3b3b3b;
+    border: 1px solid #555;
+    color: #ff8800; 
+}
+
+.dark-mode .shortcut-btn:hover {
+    background-color: #4a4a4a;
+}
+.dark-mode .primary-btn {
+    background-color: #ff8800; 
+    color: #1a1a1a; 
+}
+.dark-mode .primary-btn:hover {
+    background-color: #ff9933;
+}
+
+.dark-mode .tagline {
+    color: #f0f0f0 !important; 
+}
+
+.dark-mode .secondary-btn {
+    background-color: #555; 
+    color: #f0f0f0; 
+}
+.dark-mode .secondary-btn:hover {
+    background-color: #666;
+}
+
+.dark-mode .small-btn {
+    background-color: #444; 
+    color: #ccc;
+    border: 1px solid #555;
+}
+.dark-mode .small-btn:hover {
+    background-color: #555;
+}
+
+.dark-mode .recent-history,
+.dark-mode .history-section,
+.dark-mode .service-item,
+.dark-mode .account-info {
+    border-top-color: #444;
+    border-color: #444;
+}
+
+.dark-mode #history-list li, 
+.dark-mode #full-history-list li {
+    background-color: #383838;
+    box-shadow: none;
+}
+
+.dark-mode .form-group input[type="text"], 
+.dark-mode .form-group textarea {
+    background-color: #444;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.dark-mode .back-btn {
+    color: #ff8800;
+}
+
+.dark-mode .faq-item h4 {
+    color: #ff8800; 
+}
+
+.dark-mode .logout-btn {
+    background-color: #f44336; 
+    color: white;
+}

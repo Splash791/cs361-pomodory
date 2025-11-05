@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodory Complete MVP</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="app-container">
+        
+        <div id="page-welcome" class="screen-container visible">
+            <h1>Welcome back, (Username)! 🌟</h1>
+            <p class="tagline">Pomodory is your personal study timer that helps you stay focused and productive. An easy way to track study sessions and monitor progress. </p>
+            
+            <div class="shortcut-grid">
+                <button class="shortcut-btn" data-target="page-timer">
+                    <span class="icon">⏱️</span> Start Timer
+                </button>
+                <button class="shortcut-btn" data-target="page-history">
+                    <span class="icon">📖</span> View Study History
+                </button>
+                <button class="shortcut-btn" data-target="page-services">
+                    <span class="icon">🛠️</span> Services & Upgrades
+                </button>
+                <button class="shortcut-btn" data-target="page-account">
+                    <span class="icon">👤</span> Access Account
+                </button>
+            </div>
+
+            <div class="recent-history">
+                <h2>Your Latest Focus Streak</h2>
+                <ul id="history-list">
+                    <li class="placeholder">No sessions logged yet.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="page-timer" class="screen-container hidden">
+            <button class="back-btn" data-target="page-welcome">← Home</button>
+            <h2>Focus Session</h2>
+            <div class="timer-box">
+                <h1 id="timer-display">25:00</h1>
+            </div>
+            <div class="controls">
+                <button id="start-pause-btn" class="btn primary-btn">Start</button>
+                <button id="reset-btn" class="btn secondary-btn">Reset</button>
+            </div>
+            <button id="save-btn" class="btn secondary-btn small-btn">Save Progress</button> 
+        </div>
+
+        <div id="page-history" class="screen-container hidden">
+            <button class="back-btn" data-target="page-welcome">← Home</button>
+            <h2>Full Study History</h2>
+            <div id="full-history-list" class="history-section">
+                </div>
+        </div>
+
+        <div id="page-services" class="screen-container hidden">
+            <button class="back-btn" data-target="page-welcome">← Home</button>
+            <h2>Services & Upgrades</h2>
+            <div class="service-item">
+                <h3>Premium Subscription</h3>
+                <p>Unlock ad-free experience, custom timers, and advanced analytics.</p>
+                <button class="btn primary-btn">Go Premium ($4.99/mo)</button>
+            </div>
+            
+            <div class="service-item">
+                <h3>Customer Support (Bugs/Feedback)</h3>
+                <p>Have an issue or an idea? Let us know!</p>
+                <button class="btn secondary-btn" data-target="page-support">Contact Support</button> 
+            </div>
+
+            <div class="faq-section">
+                <h3>Commonly Asked Questions</h3>
+                <div class="faq-item">
+                    <h4>What is the Pomodoro cycle?</h4>
+                    <p>It's 25 minutes of focus, automatically followed by a 5-minute break.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How do I reset my data?</h4>
+                    <p>You can clear all local history data in the **Account Settings** page.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-account" class="screen-container hidden">
+            <button class="back-btn" data-target="page-welcome">← Home</button>
+            <h2>Account Settings</h2>
+            <div class="account-info">
+                <p><strong>Username:</strong> Username1</p>
+                <p><strong>Email:</strong> user@pomodory.com</p>
+                <p><strong>Total Sessions Logged:</strong> <span id="total-sessions">0</span></p>
+                <div class="dark-mode-control">
+                    <strong>Dark Mode:</strong>
+                    <button id="dark-mode-toggle" class="btn secondary-btn small-btn">Enable Dark Mode</button>
+                </div>
+                <button class="btn secondary-btn small-btn">Change Password</button>
+                <button class="btn secondary-btn small-btn logout-btn">Log Out</button>
+            </div>
+        </div>
+
+        <div id="page-support" class="screen-container hidden">
+            <button class="back-btn" data-target="page-services">← Back to Services</button>
+            <h2>Report a Problem or Send Feedback</h2>
+            <p>Tell us about your issue. We'll be in touch soon!</p>
+            
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="problem-name">Problem Title (e.g., "Timer stuck on zero")</label>
+                    <input type="text" id="problem-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="problem-description">Detailed Description of Problem/Feedback</label>
+                    <textarea id="problem-description" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Send Report</button>
+            </form>
+            <p id="feedback-message" style="margin-top: 15px; color: #4CAF50; display: none;">Thank you! Your feedback has been sent.</p>
+        </div>
+
+    </div>
+
+    <script src="timer.js"></script>
+</body>
+</html>
