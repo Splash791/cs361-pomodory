@@ -31,3 +31,5 @@ To run Pomodory on your computer:
 
 1.  Ensure you have the three required files: **`index.html`**, **`style.css`**, and **`timer.js`**.
 2.  Open **`index.html`** in any web browser (like Chrome or Firefox).
+
+<img width="1728" height="994" alt="Screenshot 2025-11-05 at 11 59 07 AM" src="https://github.com/user-attachments/assets/43d37915-b0a0-4fbd-a179-f22fcc4bbb1f" />
