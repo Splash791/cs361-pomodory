@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodory Complete MVP</title>
+    <title>Pomodory</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -11,113 +11,133 @@
     <div id="app-container">
         
         <div id="page-welcome" class="screen-container visible">
-            <h1>Welcome back, (Username)! 🌟</h1>
-            <p class="tagline">Pomodory is your personal study timer that helps you stay focused and productive. An easy way to track study sessions and monitor progress. </p>
+            <h1>Welcome back! 🌟</h1>
+            <p class="tagline">Ready to focus? Select an option below.</p>
             
             <div class="shortcut-grid">
                 <button class="shortcut-btn" data-target="page-timer">
                     <span class="icon">⏱️</span> Start Timer
                 </button>
                 <button class="shortcut-btn" data-target="page-history">
-                    <span class="icon">📖</span> View Study History
+                    <span class="icon">📖</span> History
                 </button>
                 <button class="shortcut-btn" data-target="page-services">
-                    <span class="icon">🛠️</span> Services & Upgrades
+                    <span class="icon">🛠️</span> Services
                 </button>
                 <button class="shortcut-btn" data-target="page-account">
-                    <span class="icon">👤</span> Access Account
+                    <span class="icon">👤</span> Account
                 </button>
             </div>
 
             <div class="recent-history">
-                <h2>Your Latest Focus Streak</h2>
+                <div class="divider"></div>
+                <h2>Latest Streak</h2>
                 <ul id="history-list">
                     <li class="placeholder">No sessions logged yet.</li>
                 </ul>
             </div>
-        </div>
+            
+            </div>
 
         <div id="page-timer" class="screen-container hidden">
             <button class="back-btn" data-target="page-welcome">← Home</button>
-            <h2>Focus Session</h2>
+            <h2 id="timer-mode-title" style="margin-top: 20px;">Focus Session</h2>
+            
+            <input type="text" id="session-name" class="session-input" placeholder="What are you working on?" autocomplete="off">
+            
             <div class="timer-box">
                 <h1 id="timer-display">25:00</h1>
             </div>
+            
             <div class="controls">
-                <button id="start-pause-btn" class="btn primary-btn">Start</button>
-                <button id="reset-btn" class="btn secondary-btn">Reset</button>
+                <button id="start-pause-btn" class="btn primary-btn">Start Focus</button>
+                </div>
+        </div>
+
+        <div id="page-break" class="screen-container hidden">
+            <h2>Break Time! 🎉</h2>
+            <p class="tagline">Relax. You earned this.</p>
+
+            <div class="shortcut-grid single-column">
+                <div class="shortcut-btn content-card">
+                    <span class="icon">😂</span>
+                    <strong>Daily Meme</strong>
+                    <div id="meme-container">
+                        <img id="break-meme" src="" alt="Fetching meme...">
+                    </div>
+                </div>
+
+                <div class="shortcut-btn content-card">
+                    <span class="icon">💡</span>
+                    <strong>Daily Quote</strong>
+                    <blockquote id="break-quote">"Loading inspiration..."</blockquote>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Activity:</strong> <span id="break-activity">Loading activity...</span>
+                </div>
             </div>
-            <button id="save-btn" class="btn secondary-btn small-btn">Save Progress</button> 
+
+            <div class="controls">
+                <button id="start-break-btn" class="btn primary-btn">Start Break (5m)</button>
+                <button id="skip-break-btn" class="btn secondary-btn">Skip Break</button>
+            </div>
         </div>
 
         <div id="page-history" class="screen-container hidden">
-            <button class="back-btn" data-target="page-welcome">← Home</button>
-            <h2>Full Study History</h2>
-            <div id="full-history-list" class="history-section">
-                </div>
+            <button class="back-btn" data-target="page-welcome">← Back</button>
+            <h2>Study History</h2>
+            <ul id="full-history-list" class="history-list-styled"></ul>
         </div>
 
         <div id="page-services" class="screen-container hidden">
-            <button class="back-btn" data-target="page-welcome">← Home</button>
-            <h2>Services & Upgrades</h2>
-            <div class="service-item">
-                <h3>Premium Subscription</h3>
-                <p>Unlock ad-free experience, custom timers, and advanced analytics.</p>
-                <button class="btn primary-btn">Go Premium ($4.99/mo)</button>
-            </div>
-            
-            <div class="service-item">
-                <h3>Customer Support (Bugs/Feedback)</h3>
-                <p>Have an issue or an idea? Let us know!</p>
-                <button class="btn secondary-btn" data-target="page-support">Contact Support</button> 
-            </div>
-
-            <div class="faq-section">
-                <h3>Commonly Asked Questions</h3>
-                <div class="faq-item">
-                    <h4>What is the Pomodoro cycle?</h4>
-                    <p>It's 25 minutes of focus, automatically followed by a 5-minute break.</p>
+            <button class="back-btn" data-target="page-welcome">← Back</button>
+            <h2>Services</h2>
+            <div class="shortcut-grid single-column">
+                <div class="shortcut-btn">
+                    <span class="icon">💎</span>
+                    <h3>Premium</h3>
+                    <p style="font-size:0.8em; margin-bottom:10px;">Ad-free & Analytics</p>
+                    <button class="btn primary-btn" style="font-size:0.8em;">Upgrade ($4.99)</button>
                 </div>
-                <div class="faq-item">
-                    <h4>How do I reset my data?</h4>
-                    <p>You can clear all local history data in the **Account Settings** page.</p>
+                <div class="shortcut-btn">
+                    <span class="icon">📨</span>
+                    <h3>Support</h3>
+                    <p style="font-size:0.8em; margin-bottom:10px;">Report bugs or feedback</p>
+                    <button class="btn secondary-btn" data-target="page-support" style="font-size:0.8em;">Contact</button> 
                 </div>
             </div>
         </div>
 
         <div id="page-account" class="screen-container hidden">
-            <button class="back-btn" data-target="page-welcome">← Home</button>
-            <h2>Account Settings</h2>
-            <div class="account-info">
-                <p><strong>Username:</strong> Username1</p>
-                <p><strong>Email:</strong> user@pomodory.com</p>
-                <p><strong>Total Sessions Logged:</strong> <span id="total-sessions">0</span></p>
-                <div class="dark-mode-control">
-                    <strong>Dark Mode:</strong>
-                    <button id="dark-mode-toggle" class="btn secondary-btn small-btn">Enable Dark Mode</button>
+            <button class="back-btn" data-target="page-welcome">← Back</button>
+            <h2>Account</h2>
+            
+            <div class="shortcut-btn content-card" style="text-align: left; align-items: flex-start;">
+                <p><strong>User:</strong> Username1</p>
+                <p><strong>Sessions:</strong> <span id="total-sessions">0</span></p>
+                <div style="margin-top: 15px; width: 100%;">
+                    <button id="dark-mode-toggle" class="btn secondary-btn" style="width:100%">Enable Dark Mode</button>
                 </div>
-                <button class="btn secondary-btn small-btn">Change Password</button>
-                <button class="btn secondary-btn small-btn logout-btn">Log Out</button>
+            </div>
+        
+            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                <p style="font-size: 0.8em; color: #999; margin-bottom: 10px;">Developer Zone</p>
+                <button class="dev-btn" data-target="page-break" onclick="fetchBreakContent()">
+                    Force Trigger Break Screen
+                </button>
             </div>
         </div>
 
         <div id="page-support" class="screen-container hidden">
-            <button class="back-btn" data-target="page-services">← Back to Services</button>
-            <h2>Report a Problem or Send Feedback</h2>
-            <p>Tell us about your issue. We'll be in touch soon!</p>
-            
-            <form id="feedback-form">
-                <div class="form-group">
-                    <label for="problem-name">Problem Title (e.g., "Timer stuck on zero")</label>
-                    <input type="text" id="problem-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="problem-description">Detailed Description of Problem/Feedback</label>
-                    <textarea id="problem-description" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn primary-btn">Send Report</button>
+            <button class="back-btn" data-target="page-services">← Back</button>
+            <h2>Feedback</h2>
+            <form id="feedback-form" style="text-align: left;">
+                <input type="text" id="problem-name" placeholder="Title" required class="input-field" style="padding: 15px; background: #f9f9f9; border:none; margin-bottom: 10px; width: 100%;">
+                <textarea id="problem-description" rows="5" placeholder="Description" required class="input-field" style="padding: 15px; background: #f9f9f9; border:none; width: 100%;"></textarea>
+                <button type="submit" class="btn primary-btn" style="width: 100%; margin-top: 10px;">Send Report</button>
             </form>
-            <p id="feedback-message" style="margin-top: 15px; color: #4CAF50; display: none;">Thank you! Your feedback has been sent.</p>
+            <p id="feedback-message" style="display:none; color: green; margin-top: 10px;">Sent!</p>
         </div>
 
     </div>

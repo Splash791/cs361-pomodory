@@ -1,0 +1,26 @@
+{
+  "name": "cs361-pomodory",
+  "version": "1.0.0",
+  "description": "Pomodory is a basic web application that implements the **Pomodoro Technique** to help users stay focused and boost productivity.",
+  "main": "timer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Splash791/cs361-pomodory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Splash791/cs361-pomodory/issues"
+  },
+  "homepage": "https://github.com/Splash791/cs361-pomodory#readme",
+  "devDependencies": {
+    "vite": "^7.2.4"
+  }
+}
