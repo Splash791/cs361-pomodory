@@ -4,7 +4,7 @@ import requests
 from flask import Flask, jsonify
 from flask_cors import CORS
 
-# SERVICE 1: MEME SERVICE (Port 5001)
+# MEME SERVICE (Port 5001)
 def run_meme_service():
     app = Flask(__name__)
     CORS(app) 
@@ -18,11 +18,11 @@ def run_meme_service():
         except:
             return jsonify({"url": "https://i.imgflip.com/1ur9b0.jpg"})
 
-    print("🚀 Meme Service running on port 5001...")
+    print(" Meme Service running on port 5001...")
     app.run(port=5001, debug=False, use_reloader=False)
 
 
-# SERVICE 2: QUOTE SERVICE (Port 5002)
+# QUOTE SERVICE (Port 5002)
 def run_quote_service():
     app = Flask(__name__)
     CORS(app)
@@ -40,7 +40,7 @@ def run_quote_service():
     def get_quote():
         return jsonify(random.choice(QUOTES))
 
-    print("🚀 Quote Service running on port 5002...")
+    print("Quote Service running on port 5002...")
     app.run(port=5002, debug=False, use_reloader=False)
 
 
